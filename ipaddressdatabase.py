@@ -1,4 +1,4 @@
-database = {}
+
 providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
              "Comodo Secure DNS", "OpenDNS Home", "Norton ConnectSafe",
              "GreenTeamDNS", "SafeDNS", "OpenNIC", "SmartViper", "Dyn",
@@ -15,14 +15,21 @@ ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
 
 # create database dictionary and match
 
-def createDatabase():
+
+def createData():
 
     for provider in (providers):
-        database = dict(zip(providers, ips))
+        data = dict(zip(providers, ips))
+
+        for ip in data.keys():
+            data.keys()
+            data.values()
+            print(ip + " => " + data[provider])
 
         # Creating separation between each new item prompt
-        print(database)
+        print(data["Level3"])
+
         break
 
 
-createDatabase()
+createData()
