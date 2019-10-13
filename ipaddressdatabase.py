@@ -20,14 +20,13 @@ def createData():
 
     for provider in (providers):
         data = dict(zip(providers, ips))
+        print(data)
+        for company in data.keys():
 
-        for ip in data.keys():
-            data.keys()
-            data.values()
-            print(ip + " => " + data[provider])
+            print(company + " => " + data[company])
 
         # Creating separation between each new item prompt
-        print(data["Level3"])
+        # print(data["Level3"])
 
         break
 
