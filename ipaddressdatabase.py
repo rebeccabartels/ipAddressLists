@@ -54,9 +54,32 @@ def printingSpecificValues(key):
     for value in dictionary.values():
         # Print out the current value and let the user know it is a SSN
         if key == key:
-
             print("This company's ip is: " + dictionary[key])
         break
 
 
 printingSpecificValues("Hurricane Electric")
+
+
+def associatedDictionaries():
+    associatedDictionary = DNS_dictionary
+    provider_names = associatedDictionary.keys()
+    primary_servers = associatedDictionary.values()
+    print(provider_names)
+    print(primary_servers)
+
+    for provider, server in associatedDictionary.items():
+
+        print("Name: " + provider + " || IP: " + server)
+
+
+associatedDictionaries()
+
+
+def addingProviders():
+    d = DNS_dictionary
+    len(d)
+    print("There are exactly " + str(len(d.keys())) + " providers.")
+
+
+addingProviders()
