@@ -2,6 +2,7 @@
 DNS_dictionary = {}
 
 
+# create and print dictionary and its data
 def create():
 
     providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
@@ -26,7 +27,7 @@ def create():
 
         for company in data.keys():
 
-            print(company + " => " + data[company])
+            print(company + " : " + data[company])
 
         # Creating separation between each new item prompt
         DNS_dictionary = data
@@ -47,6 +48,7 @@ print(DNS_dictionary)
 # print(DNS_dictionary.items())
 
 
+# printing a key value pair by specifics
 def printingSpecificValues(key):
 
     dictionary = DNS_dictionary
@@ -59,6 +61,8 @@ def printingSpecificValues(key):
 
 
 printingSpecificValues("Hurricane Electric")
+
+# making associated dictionary
 
 
 def associatedDictionaries():
@@ -75,6 +79,8 @@ def associatedDictionaries():
 
 associatedDictionaries()
 
+
+# adding providers
 
 def addingProviders():
     d = DNS_dictionary
