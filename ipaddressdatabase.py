@@ -53,9 +53,9 @@ def printingSpecificValues(key):
 
     for value in dictionary.values():
         # Print out the current value and let the user know it is a SSN
-        if key == "Hurricane Electric":
+        if key == key:
 
-            print("This company's ip is: " + dictionary["Hurricane Electric"])
+            print("This company's ip is: " + dictionary[key])
         break
 
 
