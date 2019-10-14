@@ -89,3 +89,25 @@ def addingProviders():
 
 
 addingProviders()
+
+
+# bonus 1 adding values to keys
+def update(key, newvalue):
+    updated_dict = DNS_dictionary
+    keys = updated_dict.keys()
+    values = updated_dict.values()
+
+    for value in updated_dict.values():
+        # Print out the current value and let the user know it is a SSN
+        if key == key:
+            updated_dict[key] = [value]
+            updated_dict[key].append(newvalue)
+
+    print(key + ": " + value + ", " + newvalue)
+
+
+update("Level3", '209.244.0.4')
+update("Verisign", '64.6.65.6')
+
+
+print(DNS_dictionary)
