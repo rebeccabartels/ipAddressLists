@@ -42,3 +42,21 @@ create()
 
 
 print(DNS_dictionary)
+# print(DNS_dictionary.keys())
+# print(DNS_dictionary.values())
+# print(DNS_dictionary.items())
+
+
+def printingSpecificValues(key):
+
+    dictionary = DNS_dictionary
+
+    for value in dictionary.values():
+        # Print out the current value and let the user know it is a SSN
+        if key == "Hurricane Electric":
+
+            print("This company's ip is: " + dictionary["Hurricane Electric"])
+        break
+
+
+printingSpecificValues("Hurricane Electric")
