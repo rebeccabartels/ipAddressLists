@@ -1,22 +1,25 @@
 
 DNS_dictionary = {}
+newValues = {}
+ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
+       "8.26.56.26", "208.67.222.222", "199.85.126.10", "81.218.119.11",
+       "195.46.39.39", "69.195.152.204", "208.76.50.50", "216.146.35.35",
+       "37.235.1.174", "198.101.242.72", "77.88.8.8", "91.239.100.100",
+       "74.82.42.42", "109.69.8.51", "156.154.70.1", "1.1.1.1", "45.77.165.194"]
 
+
+providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
+             "Comodo Secure DNS", "OpenDNS Home", "Norton ConnectSafe",
+             "GreenTeamDNS", "SafeDNS", "OpenNIC", "SmartViper", "Dyn",
+             "FreeDNS", "Alternate DNS", "Yandex.DNS", "UncensoredDNS",
+             "Hurricane Electric", "puntCAT", "Neustar", "Cloudflare",
+             "Fourth Estate"]
+newList = []
 
 # create and print dictionary and its data
+
+
 def create():
-
-    providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
-                 "Comodo Secure DNS", "OpenDNS Home", "Norton ConnectSafe",
-                 "GreenTeamDNS", "SafeDNS", "OpenNIC", "SmartViper", "Dyn",
-                 "FreeDNS", "Alternate DNS", "Yandex.DNS", "UncensoredDNS",
-                 "Hurricane Electric", "puntCAT", "Neustar", "Cloudflare",
-                 "Fourth Estate"]
-
-    ips = ["209.244.0.3", "64.6.64.6", "8.8.8.8", "9.9.9.9", "84.200.69.80",
-           "8.26.56.26", "208.67.222.222", "199.85.126.10", "81.218.119.11",
-           "195.46.39.39", "69.195.152.204", "208.76.50.50", "216.146.35.35",
-           "37.235.1.174", "198.101.242.72", "77.88.8.8", "91.239.100.100",
-           "74.82.42.42", "109.69.8.51", "156.154.70.1", "1.1.1.1", "45.77.165.194"]
 
     # create database dictionary and match
     global DNS_dictionary
@@ -27,7 +30,7 @@ def create():
 
         for company in data.keys():
 
-            print(company + " : " + data[company])
+            company + " : " + data[company]
 
         # Creating separation between each new item prompt
         DNS_dictionary = data
@@ -92,22 +95,57 @@ addingProviders()
 
 
 # bonus 1 adding values to keys
-def update(key, newvalue):
-    updated_dict = DNS_dictionary
-    keys = updated_dict.keys()
-    values = updated_dict.values()
-
-    for value in updated_dict.values():
-        # Print out the current value and let the user know it is a SSN
-        if key == key:
-            updated_dict[key] = [value]
-            updated_dict[key].append(newvalue)
-
-    print(key + ": " + value + ", " + newvalue)
+# step one make new dict
 
 
-update("Level3", '209.244.0.4')
-update("Verisign", '64.6.65.6')
+def addNewValues(key, newValue):
+    a = newValues
+    key = "Level3"
+    a.setdefault(key, [])
+    a[key].append(newValue)
+
+    print(a)
+    a = newValues
+
+
+addNewValues("Level3", "209.244.0.4")
+
+
+# step two : pass into global dict
+
+
+def update(existingKey, passedIP):
+    c = DNS_dictionary
+    global ips
+    global providers
+    key = []
+    y = [passedIP]
+    z = []
+    o = [y] + [z]
+    # c.setdefault(existingKey, [existingKey]).append(passedIP)
+    # print("!!!" + passedIP)
+    print("existing key: " + existingKey)
+    print("passedip: " + passedIP)
+    count = 0
+
+    for p in providers:
+        if p == existingKey:
+            z.append((c[p]))
+            ips.append(passedIP)
+            for x in ips:
+                if x == passedIP:
+                    print(passedIP)
+                    print(existingKey)
+                    c[p] = o
+                    count += 1
+                    print("true")
+                    print(c)
+                    c = DNS_dictionary
+
+            break
+
+
+update("Level3", "209.244.0.4")
 
 
 print(DNS_dictionary)
