@@ -14,7 +14,7 @@ providers = ["Level3", "Verisign", "Google", "Quad9", "DNS.WATCH",
              "FreeDNS", "Alternate DNS", "Yandex.DNS", "UncensoredDNS",
              "Hurricane Electric", "puntCAT", "Neustar", "Cloudflare",
              "Fourth Estate"]
-newList = []
+
 
 # create and print dictionary and its data
 
@@ -97,20 +97,6 @@ addingProviders()
 # bonus 1 adding values to keys
 # step one make new dict
 
-
-def addNewValues(key, newValue):
-    a = newValues
-    key = "Level3"
-    a.setdefault(key, [])
-    a[key].append(newValue)
-
-    print(a)
-    a = newValues
-
-
-addNewValues("Level3", "209.244.0.4")
-
-
 # step two : pass into global dict
 
 
@@ -118,14 +104,9 @@ def update(existingKey, passedIP):
     c = DNS_dictionary
     global ips
     global providers
-    key = []
     y = [passedIP]
     z = []
     o = [y] + [z]
-    # c.setdefault(existingKey, [existingKey]).append(passedIP)
-    # print("!!!" + passedIP)
-    print("existing key: " + existingKey)
-    print("passedip: " + passedIP)
     count = 0
 
     for p in providers:
@@ -146,6 +127,19 @@ def update(existingKey, passedIP):
 
 
 update("Level3", "209.244.0.4")
-
-
+update("Verisign", "64.6.65.6")
 print(DNS_dictionary)
+
+
+def addNewValues(key, newValue):
+
+    a = newValues
+    key = "Level3"
+    a.setdefault(key, [])
+    a[key].append(newValue)
+
+    print(a)
+    a = newValues
+
+
+addNewValues("Level3", "209.244.0.4")
