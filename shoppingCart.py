@@ -12,7 +12,7 @@ shopingCart = []
 for item in itemList:
     print("[" + str(itemList.index(item)) + "] " + item)
 
-# Run through a loop which allows the user to choose which candies to take home with them
+# Run through a loop which allows the user to choose which candies to take home with them!!!!
 for x in range(allowance):
     selected = input("Which item would you like to bring home? ")
 
@@ -23,3 +23,4 @@ for x in range(allowance):
 print("I brought home with me...")
 for item in shoppingCart:
     print(item)
+#test

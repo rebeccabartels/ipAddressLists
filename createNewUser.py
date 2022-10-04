@@ -19,6 +19,9 @@ def collect_user_information():
     user_info = [username, email, password]
 
     # Return a list with username, email, and password
+    #test
+    #Test
+    #test
     return user_info
 
 
