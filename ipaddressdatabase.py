@@ -43,7 +43,7 @@ def create():
 
 
 create()
-
+#updating at 10/3 
 
 print(DNS_dictionary)
 # print(DNS_dictionary.keys())
